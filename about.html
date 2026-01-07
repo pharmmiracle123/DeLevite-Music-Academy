@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us | Deelevites Music Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Animation Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fadeUp: "fadeUp 1s ease-out forwards",
+            fadeIn: "fadeIn 1.2s ease forwards",
+            slideInLeft: "slideInLeft 1s ease forwards",
+            slideInRight: "slideInRight 1s ease forwards",
+            float: "float 6s ease-in-out infinite"
+          },
+          keyframes: {
+            fadeUp: {
+              "0%": { opacity: 0, transform: "translateY(40px)" },
+              "100%": { opacity: 1, transform: "translateY(0)" }
+            },
+            fadeIn: {
+              "0%": { opacity: 0 },
+              "100%": { opacity: 1 }
+            },
+            slideInLeft: {
+              "0%": { opacity: 0, transform: "translateX(-60px)" },
+              "100%": { opacity: 1, transform: "translateX(0)" }
+            },
+            slideInRight: {
+              "0%": { opacity: 0, transform: "translateX(60px)" },
+              "100%": { opacity: 1, transform: "translateX(0)" }
+            },
+            float: {
+              "0%,100%": { transform: "translateY(0)" },
+              "50%": { transform: "translateY(-15px)" }
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gradient-to-br from-indigo-50 via-white to-pink-50 text-gray-800">
+
+<!-- NAVIGATION -->
+<header class="fixed top-0 w-full bg-white/80 backdrop-blur shadow z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-indigo-700">Deelevites Music Academy</h1>
+    <nav class="hidden md:flex gap-6 font-medium">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="text-indigo-600 font-semibold">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="pt-32 pb-24 text-center relative">
+  <div class="absolute top-20 left-10 text-6xl opacity-10 animate-float">🎶</div>
+  <div class="absolute top-32 right-20 text-6xl opacity-10 animate-float">🎼</div>
+
+  <h2 class="text-4xl md:text-5xl font-extrabold text-indigo-700 mb-4 animate-fadeUp">
+    About Deelevites Music Academy
+  </h2>
+  <p class="text-lg text-gray-600 max-w-3xl mx-auto animate-fadeUp">
+    “We Are Gifted To Be Lifted” — raising confident, disciplined, and creative children through music.
+  </p>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div class="animate-slideInLeft">
+      <h3 class="text-3xl font-bold text-indigo-700 mb-6">Who We Are</h3>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        Deelevites Music Academy is a purpose-driven music institution dedicated to nurturing
+        young talents through structured, fun, and high-quality music education.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        We believe music is more than sound — it is a tool for discipline, confidence,
+        leadership, and global influence.
+      </p>
+    </div>
+
+    <div class="animate-slideInRight">
+      <!-- Video Upload Placeholder -->
+      <div class="relative rounded-2xl overflow-hidden shadow-lg">
+        <video controls class="w-full h-72 object-cover bg-black">
+          <source src="VID-20260107-WA0241.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <span class="absolute bottom-4 right-4 bg-indigo-600 text-white text-sm px-4 py-1 rounded-full">
+          Academy Introduction
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION & MISSION -->
+<section class="py-20 bg-gradient-to-r from-indigo-50 to-pink-50">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+    <div class="bg-white p-8 rounded-2xl shadow animate-fadeUp">
+      <h4 class="text-2xl font-bold text-indigo-700 mb-4">Our Vision</h4>
+      <p class="text-gray-600 leading-relaxed">
+        To raise a global generation of confident, disciplined, and creative individuals
+        who discover purpose, excellence, and leadership through music.
+      </p>
+    </div>
+
+    <div class="bg-white p-8 rounded-2xl shadow animate-fadeUp">
+      <h4 class="text-2xl font-bold text-indigo-700 mb-4">Our Mission</h4>
+      <p class="text-gray-600 leading-relaxed">
+        Deelevites Music Academy exists to provide fun, structured, and high-quality music education
+        that builds skill, confidence, discipline, and character in children and young people.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CORE VALUES -->
+<section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h3 class="text-3xl font-bold text-indigo-700 mb-12">Our Core Values</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="bg-indigo-50 p-6 rounded-xl animate-fadeUp">🎯 Excellence</div>
+      <div class="bg-indigo-50 p-6 rounded-xl animate-fadeUp">🎵 Creativity</div>
+      <div class="bg-indigo-50 p-6 rounded-xl animate-fadeUp">🧠 Discipline</div>
+      <div class="bg-indigo-50 p-6 rounded-xl animate-fadeUp">🌍 Leadership</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="py-20 bg-gradient-to-r from-pink-50 to-indigo-50">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h3 class="text-3xl font-bold text-indigo-700 mb-6">Our Experience</h3>
+    <p class="text-gray-600 max-w-3xl mx-auto mb-10">
+      With over <strong>5 years of teaching experience</strong>, our academy has trained
+      children and young people in music performance, theory, and discipline.
+    </p>
+
+    <!-- Performance Video -->
+    <div class="rounded-2xl overflow-hidden shadow-lg max-w-3xl mx-auto">
+      <video controls class="w-full h-80 object-cover bg-black">
+        <source src="VID-20260107-WA0239.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="py-20 bg-indigo-700 text-white text-center">
+  <h3 class="text-3xl font-bold mb-4">Join Deelevites Music Academy</h3>
+  <p class="mb-8">Let your child discover purpose, confidence, and excellence through music.</p>
+  <a href="index.html#contact" class="inline-block bg-white text-indigo-700 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+    Contact Us
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-6 bg-gray-900 text-gray-300 text-center">
+  <p>© 2026 Deelevites Music Academy</p>
+  <p class="text-sm mt-1">Built with ❤️ by MiracleCode</p>
+</footer>
+
+</body>
+</html>
