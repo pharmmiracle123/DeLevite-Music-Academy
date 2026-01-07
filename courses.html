@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Courses | Deelevites Music Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Animations -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fadeUp: "fadeUp 1s ease-out forwards",
+            slideUp: "slideUp 1s ease-out forwards",
+            pop: "pop .4s ease-out forwards"
+          },
+          keyframes: {
+            fadeUp: {
+              "0%": { opacity: 0, transform: "translateY(40px)" },
+              "100%": { opacity: 1, transform: "translateY(0)" }
+            },
+            slideUp: {
+              "0%": { opacity: 0, transform: "translateY(80px)" },
+              "100%": { opacity: 1, transform: "translateY(0)" }
+            },
+            pop: {
+              "0%": { transform: "scale(.8)", opacity: 0 },
+              "100%": { transform: "scale(1)", opacity: 1 }
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gradient-to-br from-indigo-50 via-white to-pink-50 text-gray-800">
+
+<!-- HEADER -->
+<header class="fixed top-0 w-full bg-white/80 backdrop-blur shadow z-40">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between">
+    <h1 class="font-bold text-indigo-700">Deelevites Music Academy</h1>
+    <a href="index.html" class="text-sm">← Back Home</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="pt-32 pb-16 text-center">
+  <h2 class="text-4xl font-extrabold text-indigo-700 mb-3 animate-fadeUp">
+    Music Courses for Children
+  </h2>
+  <p class="text-gray-600 animate-fadeUp">
+    Structured learning • Confidence building • Fun & discipline
+  </p>
+</section>
+
+<!-- COURSES -->
+<section class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-24">
+
+  <!-- COURSE CARD -->
+  <div class="bg-white p-6 rounded-2xl shadow animate-slideUp">
+    <h3 class="text-xl font-bold mb-2">🎹 Piano</h3>
+    <p class="text-gray-600 mb-4">Strong foundation for young musicians.</p>
+    <button onclick="openForm('Piano')"
+      class="w-full bg-indigo-600 text-white py-2 rounded-full">
+      Enroll Child
+    </button>
+  </div>
+
+  <div class="bg-white p-6 rounded-2xl shadow animate-slideUp">
+    <h3 class="text-xl font-bold mb-2">🎸 Guitar</h3>
+    <p class="text-gray-600 mb-4">Acoustic & bass guitar training.</p>
+    <button onclick="openForm('Guitar')" class="w-full bg-indigo-600 text-white py-2 rounded-full">
+      Enroll Child
+    </button>
+  </div>
+
+  <div class="bg-white p-6 rounded-2xl shadow animate-slideUp">
+    <h3 class="text-xl font-bold mb-2">🎤 Voice Training</h3>
+    <p class="text-gray-600 mb-4">Build confidence & vocal strength.</p>
+    <button onclick="openForm('Voice Training')" class="w-full bg-indigo-600 text-white py-2 rounded-full">
+      Enroll Child
+    </button>
+  </div>
+
+  <div class="bg-white p-6 rounded-2xl shadow animate-slideUp">
+    <h3 class="text-xl font-bold mb-2">🥁 Drums</h3>
+    <p class="text-gray-600 mb-4">Rhythm & coordination training.</p>
+    <button onclick="openForm('Drums')" class="w-full bg-indigo-600 text-white py-2 rounded-full">
+      Enroll Child
+    </button>
+  </div>
+
+  <div class="bg-white p-6 rounded-2xl shadow animate-slideUp">
+    <h3 class="text-xl font-bold mb-2">🎻 Violin</h3>
+    <p class="text-gray-600 mb-4">Classical posture & discipline.</p>
+    <button onclick="openForm('Violin')" class="w-full bg-indigo-600 text-white py-2 rounded-full">
+      Enroll Child
+    </button>
+  </div>
+
+  <div class="bg-white p-6 rounded-2xl shadow animate-slideUp">
+    <h3 class="text-xl font-bold mb-2">🎼 Music Theory</h3>
+    <p class="text-gray-600 mb-4">Understand notes & rhythm.</p>
+    <button onclick="openForm('Music Theory')" class="w-full bg-indigo-600 text-white py-2 rounded-full">
+      Enroll Child
+    </button>
+  </div>
+
+</section>
+
+<!-- MULTI STEP FORM MODAL -->
+<div id="formModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+  <div class="bg-white rounded-2xl w-full max-w-md p-6 animate-pop relative">
+
+    <button onclick="closeForm()" class="absolute top-4 right-4 text-xl">✖</button>
+
+    <!-- STEP 1 -->
+    <div id="step1">
+      <h3 class="text-xl font-bold mb-4">Child Information</h3>
+      <input id="childName" placeholder="Child's Name"
+        class="w-full mb-3 px-4 py-3 border rounded-lg">
+      <input id="childAge" placeholder="Child's Age"
+        class="w-full mb-4 px-4 py-3 border rounded-lg">
+      <button onclick="nextStep(2)"
+        class="w-full bg-indigo-600 text-white py-3 rounded-lg">
+        Next
+      </button>
+    </div>
+
+    <!-- STEP 2 -->
+    <div id="step2" class="hidden">
+      <h3 class="text-xl font-bold mb-4">Parent Information</h3>
+      <input id="parentName" placeholder="Parent / Guardian Name"
+        class="w-full mb-3 px-4 py-3 border rounded-lg">
+      <input id="parentPhone" placeholder="WhatsApp Number"
+        class="w-full mb-4 px-4 py-3 border rounded-lg">
+      <button onclick="nextStep(3)"
+        class="w-full bg-indigo-600 text-white py-3 rounded-lg">
+        Continue
+      </button>
+    </div>
+
+    <!-- STEP 3 -->
+    <div id="step3" class="hidden text-center">
+      <h3 class="text-xl font-bold mb-4">Finish Registration</h3>
+      <p class="text-gray-600 mb-6">
+        Click below to complete registration via WhatsApp.
+      </p>
+      <button onclick="sendToWhatsApp()"
+        class="w-full bg-green-500 text-white py-3 rounded-lg">
+        Continue to WhatsApp
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+  let selectedCourse = "";
+
+  function openForm(course) {
+    selectedCourse = course;
+    document.getElementById("formModal").classList.remove("hidden");
+    document.getElementById("formModal").classList.add("flex");
+  }
+
+  function closeForm() {
+    document.getElementById("formModal").classList.add("hidden");
+    resetSteps();
+  }
+
+  function nextStep(step) {
+    ["step1","step2","step3"].forEach(id => document.getElementById(id).classList.add("hidden"));
+    document.getElementById("step"+step).classList.remove("hidden");
+  }
+
+  function resetSteps() {
+    nextStep(1);
+  }
+
+  function sendToWhatsApp() {
+    const name = document.getElementById("childName").value;
+    const age = document.getElementById("childAge").value;
+    const parent = document.getElementById("parentName").value;
+    const phone = document.getElementById("parentPhone").value;
+
+    const message = `
+══════════════════════
+🎵 *DEELEVITES MUSIC ACADEMY*
+══════════════════════
+
+👶 Child Name: ${name}
+🎂 Age: ${age}
+🎼 Course: ${selectedCourse}
+
+👨‍👩‍👧 Parent: ${parent}
+📞 Phone: ${phone}
+
+📌 I want to enroll my child.
+══════════════════════
+    `;
+
+    window.open(
+      `https://wa.me/2347034247977?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  }
+</script>
+
+</body>
+</html>
