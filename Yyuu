@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site Unavailable</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Dark Mode Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563eb',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen flex items-center justify-center transition-colors duration-300">
+
+  <!-- Theme Toggle -->
+  <button
+    onclick="toggleTheme()"
+    class="absolute top-6 right-6 px-4 py-2 text-sm rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition">
+    🌙 / ☀️
+  </button>
+
+  <div class="text-center px-6 max-w-lg">
+    <!-- Icon -->
+    <div class="flex justify-center mb-6">
+      <svg class="w-20 h-20 text-primary animate-pulse" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M12 9v3.75m9.303 3.376c.866 1.5-.217 3.374-1.948 3.374H4.645c-1.73 0-2.813-1.874-1.948-3.374L10.052 3.378c.866-1.5 3.03-1.5 3.896 0l7.355 12.748z" />
+      </svg>
+    </div>
+
+    <!-- Message -->
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">
+      Site Currently Unavailable
+    </h1>
+
+    <p class="text-gray-600 dark:text-gray-300 mb-6">
+      We are performing scheduled maintenance.  
+      Please check back shortly.
+    </p>
+
+    <!-- Contact Info -->
+    <div class="bg-gray-200 dark:bg-gray-800 rounded-lg p-4 mb-6 text-sm">
+      <p class="mb-2">
+        📧 <a href="mailto:onyekamiracle08@gmail.com" class="text-primary hover:underline">
+          onyekamiracle08@gmail.com
+        </a>
+      </p>
+      <p>
+        📞 <a href="tel:+2348169395022" class="text-primary hover:underline">
+          08169395022
+        </a>
+      </p>
+    </div>
+
+    <!-- Countdown -->
+    <p id="timer" class="text-sm text-gray-500 dark:text-gray-400"></p>
+
+    <!-- Refresh Button -->
+    <button
+      onclick="refreshPage()"
+      class="mt-8 px-6 py-3 bg-primary hover:bg-blue-700 text-white rounded-lg transition">
+      Refresh Page
+    </button>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Theme handling
+    const html = document.documentElement;
+
+    function toggleTheme() {
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    }
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'light') {
+      html.classList.remove('dark');
+    }
+
+    // Auto-refresh countdown
+    let seconds = 30;
+    const timer = document.getElementById("timer");
+
+    const countdown = setInterval(() => {
+      timer.textContent = `Auto-refreshing in ${seconds} seconds...`;
+      seconds--;
+
+      if (seconds < 0) {
+        clearInterval(countdown);
+        location.reload();
+      }
+    }, 1000);
+
+    function refreshPage() {
+      location.reload();
+    }
+  </script>
+
+</body>
+</html>
