@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gallery | Deelevites Music Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Animations -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fadeUp: "fadeUp 1s ease-out forwards",
+            zoomIn: "zoomIn .6s ease-out forwards"
+          },
+          keyframes: {
+            fadeUp: {
+              "0%": { opacity: 0, transform: "translateY(40px)" },
+              "100%": { opacity: 1, transform: "translateY(0)" }
+            },
+            zoomIn: {
+              "0%": { transform: "scale(.85)", opacity: 0 },
+              "100%": { transform: "scale(1)", opacity: 1 }
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gradient-to-br from-indigo-50 via-white to-pink-50 text-gray-800">
+
+<!-- HEADER -->
+<header class="fixed top-0 w-full bg-white/80 backdrop-blur shadow z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-indigo-700">Deelevites Music Academy</h1>
+    <nav class="hidden md:flex gap-6 font-medium">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="gallery.html" class="text-indigo-600 font-semibold">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="pt-32 pb-16 text-center">
+  <h2 class="text-4xl font-extrabold text-indigo-700 mb-4 animate-fadeUp">
+    Academy Gallery
+  </h2>
+  <p class="text-gray-600 animate-fadeUp">
+    Learning • Practice • Performance 🎶
+  </p>
+</section>
+
+<!-- PHOTO GALLERY -->
+<section class="max-w-7xl mx-auto px-6 pb-24">
+  <h3 class="text-2xl font-bold text-indigo-700 mb-8">📸 Photo Gallery</h3>
+
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+    <!-- Replace or add more images freely -->
+    <img src="/IMG-20260107-WA0257.jpg" class="gallery-img rounded-xl shadow hover:scale-105 transition cursor-pointer animate-zoomIn">
+    <img src="/IMG-20260107-WA0258.jpg" class="gallery-img rounded-xl shadow hover:scale-105 transition cursor-pointer animate-zoomIn">
+    <img src="/IMG-20260107-WA0260.jpg" class="gallery-img rounded-xl shadow hover:scale-105 transition cursor-pointer animate-zoomIn">
+    <img src="/IMG-20260107-WA0261.jpg" class="gallery-img rounded-xl shadow hover:scale-105 transition cursor-pointer animate-zoomIn">
+    <img src="/IMG-20260107-WA0262.jpg" class="gallery-img rounded-xl shadow hover:scale-105 transition cursor-pointer animate-zoomIn">
+    <img src="/IMG-20260107-WA0263.jpg" class="gallery-img rounded-xl shadow hover:scale-105 transition cursor-pointer animate-zoomIn">
+    <img src="/IMG-20260107-WA0264.jpg" class="gallery-img rounded-xl shadow hover:scale-105 transition cursor-pointer animate-zoomIn">
+    <img src="/IMG-20260107-WA0265.jpg" class="gallery-img rounded-xl shadow hover:scale-105 transition cursor-pointer animate-zoomIn">
+
+  </div>
+</section>
+
+<!-- VIDEO GALLERY -->
+<section class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-2xl font-bold text-indigo-700 mb-12">🎥 Video Highlights</h3>
+
+    <!-- Founder Video -->
+    <div class="mb-16">
+      <h4 class="text-xl font-semibold mb-4">🎤 Message from the Founder</h4>
+      <video controls class="w-full max-w-3xl rounded-xl shadow bg-black">
+        <source src="/VID-20260107-WA0241.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- Student Learning -->
+    <div class="mb-16">
+      <h4 class="text-xl font-semibold mb-4">🎼 Students Learning</h4>
+      <div class="grid md:grid-cols-2 gap-8">
+        <video controls class="rounded-xl shadow bg-black">
+          <source src="/VID-20260107-WA0239.mp4">
+        </video>
+        <video controls class="rounded-xl shadow bg-black">
+          <source src="videos/student-learning-2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Student Performance -->
+    <div>
+      <h4 class="text-xl font-semibold mb-4">🎶 Student Performances</h4>
+      <div class="grid md:grid-cols-2 gap-8">
+        <video controls class="rounded-xl shadow bg-black">
+          <source src="/VID-20260107-WA0240.mp4">
+        </video>
+        <video controls class="rounded-xl shadow bg-black">
+          <source src="videos/student-performance-2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- IMAGE MODAL -->
+<div id="imageModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+  <img id="modalImg" class="max-w-4xl max-h-[85vh] rounded-xl animate-zoomIn">
+</div>
+
+<!-- FOOTER -->
+<footer class="py-6 bg-gray-900 text-gray-300 text-center">
+  <p>© 2026 Deelevites Music Academy</p>
+  <p class="text-sm mt-1">Built with ❤️ for Music Education</p>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+  const images = document.querySelectorAll(".gallery-img");
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+
+  images.forEach(img => {
+    img.addEventListener("click", () => {
+      modalImg.src = img.src;
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    });
+  });
+
+  modal.addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
+</script>
+
+</body>
+</html>
