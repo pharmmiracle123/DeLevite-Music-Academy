@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Deelevites Music Academy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      animation: {
+        fadeUp: "fadeUp 1s ease-out forwards",
+        float: "float 6s ease-in-out infinite",
+        slideIn: "slideIn .4s ease-out forwards",
+      },
+      keyframes: {
+        fadeUp: {
+          "0%": {opacity:0, transform:"translateY(40px)"},
+          "100%": {opacity:1, transform:"translateY(0)"}
+        },
+        float: {
+          "0%,100%": { transform:"translateY(0)" },
+          "50%": { transform:"translateY(-15px)" }
+        },
+        slideIn: {
+          "0%": { transform:"translateX(-100%)" },
+          "100%": { transform:"translateX(0)" }
+        }
+      }
+    }
+  }
+};
+</script>
+</head>
+
+<body class="bg-gradient-to-br from-indigo-50 via-white to-pink-50 text-gray-800 overflow-x-hidden">
+
+<!-- ================= NAVIGATION ================= -->
+<nav class="fixed top-0 w-full bg-white/80 backdrop-blur shadow z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+    <!-- LOGO -->
+    <div class="flex items-center gap-3">
+      <img src="IMG-20260107-WA0256.jpg"
+           alt="Deelevites Logo"
+           class="w-12 h-12 rounded-full object-cover shadow">
+
+      <div>
+        <h1 class="text-lg font-bold text-indigo-700">Deelevites</h1>
+        <p class="text-xs text-gray-500">Music Academy</p>
+      </div>
+    </div>
+
+    <!-- DESKTOP MENU -->
+    <div class="hidden md:flex gap-6 items-center font-medium">
+      <a href="#home">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="#ceo">CEO</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#contact">Contact</a>
+
+      <button id="openFormBtn"
+        class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600">
+        Register
+      </button>
+    </div>
+
+    <!-- MOBILE ICON -->
+    <button id="menuBtn" class="md:hidden text-3xl">☰</button>
+  </div>
+</nav>
+
+<!-- ================= MOBILE MENU ================= -->
+<div id="mobileMenu" class="fixed inset-0 bg-black/60 hidden z-50">
+  <div class="bg-white w-4/5 max-w-sm h-full p-6 animate-slideIn relative">
+    <button id="closeMenu" class="absolute top-4 right-4 text-3xl">✖</button>
+    <nav class="flex flex-col gap-6 text-lg mt-10">
+      <a href="#home">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="#ceo">CEO</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#contact">Contact</a>
+      <button id="openFormBtnMobile"
+        class="bg-green-500 text-white py-3 rounded-full">
+        Register on WhatsApp
+      </button>
+    </nav>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="pt-36 pb-24 text-center relative">
+  <div class="absolute top-20 left-10 text-6xl opacity-10 animate-float">🎵</div>
+  <div class="absolute top-40 right-10 text-6xl opacity-10 animate-float">🎶</div>
+
+  <h2 class="text-4xl md:text-5xl font-extrabold text-indigo-700 mb-6 animate-fadeUp">
+    We Are Gifted <span class="text-pink-500">To Be Lifted</span>
+  </h2>
+
+  <p id="changingText" class="text-lg text-gray-600 animate-fadeUp">
+    Raising confident children through music 🎼
+  </p>
+
+  <button id="openFormBtn2"
+    class="mt-8 bg-indigo-600 text-white px-8 py-3 rounded-full hover:bg-indigo-700">
+    Enroll Your Child
+  </button>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="py-20 bg-white text-center">
+  <h3 class="text-3xl font-bold text-indigo-700 mb-6">About Deelevites</h3>
+  <p class="max-w-3xl mx-auto text-gray-600">
+    Deelevites Music Academy is dedicated to raising a global generation of
+    disciplined, confident, and creative individuals through structured,
+    high-quality music education.
+  </p>
+</section>
+
+<!-- ================= COURSES ================= -->
+<section id="courses" class="py-20 bg-indigo-50">
+  <h3 class="text-3xl font-bold text-center text-indigo-700 mb-12">
+    Instruments We Teach
+  </h3>
+
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-7xl mx-auto px-6">
+    <div class="bg-white p-6 rounded-xl shadow text-center">🎹 Piano</div>
+    <div class="bg-white p-6 rounded-xl shadow text-center">🎸 Guitar</div>
+    <div class="bg-white p-6 rounded-xl shadow text-center">🎻 Violin</div>
+    <div class="bg-white p-6 rounded-xl shadow text-center">🥁 Drums</div>
+    <div class="bg-white p-6 rounded-xl shadow text-center">🎷 Saxophone</div>
+    <div class="bg-white p-6 rounded-xl shadow text-center">🎺 Trumpet</div>
+    <div class="bg-white p-6 rounded-xl shadow text-center">🎤 Voice</div>
+    <div class="bg-white p-6 rounded-xl shadow text-center">🎹 Keyboard</div>
+    <div class="bg-white p-6 rounded-xl shadow text-center">🪕 Bass Guitar</div>
+    <div class="bg-white p-6 rounded-xl shadow text-center">🎼 Music Theory</div>
+  </div>
+</section>
+
+<!-- ================= CEO ================= -->
+<section id="ceo" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <img src="IMG-20260107-WA0231.jpg"
+         class="w-full max-w-sm mx-auto rounded-2xl shadow animate-float">
+
+    <div>
+      <h3 class="text-3xl font-bold text-indigo-700 mb-4">
+        Message From the CEO
+      </h3>
+      <h4 class="text-xl font-semibold mb-4">Darlington Isong</h4>
+      <p class="text-gray-600 leading-relaxed">
+        Every child is gifted. At Deelevites Music Academy, we use music
+        as a tool to build confidence, discipline, leadership, and purpose
+        for life.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery" class="py-20 bg-indigo-50">
+  <h3 class="text-3xl font-bold text-center text-indigo-700 mb-4">
+    Our Gallery
+  </h3>
+
+  <p class="text-center text-gray-600 mb-12">
+    Moments from our classes, rehearsals, and performances
+  </p>
+
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+
+    <!-- IMAGE 1 -->
+    <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-white">
+      <img 
+        src="IMG-20260107-WA0257.jpg"
+        alt="Deelevites Music Class"
+        class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500"
+      />
+      <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition"></div>
+    </div>
+
+    <!-- IMAGE 2 -->
+    <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-white">
+      <img 
+        src="IMG-20260107-WA0258.jpg"
+        alt="Music Practice Session"
+        class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500"
+      />
+      <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition"></div>
+    </div>
+
+    <!-- IMAGE 3 -->
+    <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-white">
+      <img 
+        src="IMG-20260107-WA0260.jpg"
+        alt="Instrument Training"
+        class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500"
+      />
+      <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition"></div>
+    </div>
+
+    <!-- IMAGE 4 (PLACEHOLDER) -->
+    <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-white flex items-center justify-center">
+      <span class="text-gray-400 text-sm">
+         <img 
+        src="/IMG-20260107-WA0256.jpg"
+        alt="Instrument Training"
+        class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500"
+      />
+      <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition"></div>
+    </div>
+    </div>
+
+  </div>
+
+  <p class="text-center text-sm text-gray-500 mt-8">
+    ✨ Enroll your Children🙂
+  </p>
+</section>
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="py-20 bg-indigo-700 text-white text-center">
+  <h3 class="text-3xl font-bold mb-4">Contact Us</h3>
+  <p>📞 07034247977</p>
+  <p>✉️ darlingtonisong@gmail.com</p>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="py-6 bg-gray-900 text-gray-300 text-center">
+  © 2026 Deelevites Music Academy
+</footer>
+
+<!-- ================= WHATSAPP FORM ================= -->
+<div id="whatsappFormModal"
+ class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+
+  <div class="bg-white p-8 rounded-2xl w-full max-w-md relative">
+    <button id="closeForm" class="absolute top-4 right-4 text-2xl">✖</button>
+
+    <h3 class="text-2xl font-bold text-indigo-700 mb-4">
+      Register Your Child
+    </h3>
+
+    <input id="childName" placeholder="Child Name"
+      class="w-full mb-4 p-3 border rounded">
+
+    <input id="childAge" placeholder="Age"
+      class="w-full mb-4 p-3 border rounded">
+
+    <select id="instrument" class="w-full mb-4 p-3 border rounded">
+      <option>Select Instrument</option>
+      <option>Piano</option>
+      <option>Guitar</option>
+      <option>Violin</option>
+      <option>Drums</option>
+    </select>
+
+    <button id="submitForm"
+      class="w-full bg-green-500 text-white py-3 rounded">
+      Continue to WhatsApp
+    </button>
+  </div>
+</div>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const closeMenu = document.getElementById("closeMenu");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.onclick = () => mobileMenu.classList.remove("hidden");
+closeMenu.onclick = () => mobileMenu.classList.add("hidden");
+
+const openBtns = [
+  document.getElementById("openFormBtn"),
+  document.getElementById("openFormBtnMobile"),
+  document.getElementById("openFormBtn2")
+];
+
+const modal = document.getElementById("whatsappFormModal");
+const closeForm = document.getElementById("closeForm");
+
+openBtns.forEach(btn => btn && (btn.onclick = () => modal.classList.remove("hidden")));
+closeForm.onclick = () => modal.classList.add("hidden");
+
+document.getElementById("submitForm").onclick = () => {
+  const name = childName.value;
+  const age = childAge.value;
+  const inst = instrument.value;
+  if(!name || !age) return alert("Fill all fields");
+
+  const msg = encodeURIComponent(
+  `🎵 *DEELEVITES MUSIC ACADEMY* 🎵
+_"We Are Gifted To Be Lifted"_
+
+════════════════════
+📌 *NEW STUDENT REGISTRATION*
+════════════════════
+
+👶 *Child Information*
+• *Name:* ${name}
+• *Age:* ${age} years
+• *Preferred Instrument:* ${inst}
+
+════════════════════
+📍 *Submitted Via*
+Deelevites Music Academy Website
+
+📞 *Contact:* 07034247977
+✉️ *Email:* darlingtonisong@gmail.com
+
+🙏 Thank you for choosing Deelevites Music Academy!
+We will contact you shortly.
+`
+);
+  window.open(`https://wa.me/+2347034247977?text=${msg}`, "_blank");
+};
+</script>
+
+</body>
+</html>
