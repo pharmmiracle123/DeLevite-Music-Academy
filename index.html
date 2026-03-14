@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Deelevites Music Academy</title>
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0f172a">
+<title>Delevites Music Academy</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script src="https://cdn.tailwindcss.com"></script>
@@ -111,7 +113,16 @@ tailwind.config = {
     Enroll Your Child
   </button>
 </section>
-
+<button id="installBtn" style="
+padding:10px 20px;
+background:#0f172a;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+">
+Install App
+</button>
 <!-- ================= ABOUT ================= -->
 <section id="about" class="py-20 bg-white text-center">
   <h3 class="text-3xl font-bold text-indigo-700 mb-6">About Deelevites</h3>
@@ -319,6 +330,33 @@ We will contact you shortly.
   window.open(`https://wa.me/+2347034247977?text=${msg}`, "_blank");
 };
 </script>
+  <script>
+let deferredPrompt;
 
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  const installBtn = document.getElementById("installBtn");
+  installBtn.style.display = "block";
+
+  installBtn.addEventListener("click", () => {
+    deferredPrompt.prompt();
+
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === "accepted") {
+        console.log("User installed the app");
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js")
+    .then(() => console.log("Service Worker Registered"));
+}
+</script>
 </body>
 </html>
